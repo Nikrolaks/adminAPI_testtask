@@ -1,10 +1,8 @@
 from fastapi import FastAPI
 
+from .api import router
+
 app = FastAPI()
-
-@app.get('/')
-def greeting():
-    return {'message' : "Hello, admins!"}
-
+app.include_router(router)
 
 
